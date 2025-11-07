@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Átallo & Nicole — Save the Date</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>Átallo Kauê &amp; Nicole Súzane</h1>
+      <p class="subtitle">Save the Date — 26 de agosto de 2026</p>
+      <div id="countdown" class="countdown">
+        <div class="time"><span id="days">0</span><small>Dias</small></div>
+        <div class="time"><span id="hours">0</span><small>Horas</small></div>
+        <div class="time"><span id="minutes">0</span><small>Minutos</small></div>
+        <div class="time"><span id="seconds">0</span><small>Segundos</small></div>
+      </div>
+    </header>
+
+    <section class="story">
+      <h2>Nossa História</h2>
+      <p>Nos conhecemos quando éramos bem jovens e, ao longo dos anos, o carinho e a cumplicidade só cresceram. Hoje celebramos o amor e a escolha de caminharmos juntos para sempre — venha dividir esse momento com a gente.</p>
+    </section>
+
+    <section class="info">
+      <h2>Informações</h2>
+      <p><strong>Local:</strong> Portal das Oliveiras — Trizidela</p>
+      <p><strong>Data:</strong> 26 de agosto de 2026</p>
+    </section>
+
+    <section class="gifts">
+      <h2>Lista de Presentes</h2>
+      <p>Escolha um presente abaixo. Ao clicar em "Pagar com Pix" copie a chave Pix e envie pelo seu app — o botão abre um modal com instruções. Para cartão (parcelado) seguimos por serviços de pagamento externos; veja a seção do README com opções de integração.</p>
+
+      <div class="gift-grid" id="giftGrid">
+        <!-- Gifts injected by script -->
+      </div>
+    </section>
+
+    <section class="rsvp">
+      <h2>Confirmação de Presença (RSVP)</h2>
+      <form id="rsvpForm">
+        <label>Nome completo<input type="text" id="rsvpName" required /></label>
+        <label>Quantidade de convidados<input type="number" id="rsvpGuests" min="0" value="1" required /></label>
+        <label>Mensagem (opcional)<textarea id="rsvpMessage"></textarea></label>
+        <div class="actions">
+          <button type="submit">Confirmar presença</button>
+          <button type="button" id="downloadCsv">Baixar lista (CSV)</button>
+        </div>
+        <p class="note">As confirmações ficam salvas no navegador aqui — recomendo publicar o site e conectar o formulário a um serviço de e-mail ou Google Forms para receber automaticamente por e-mail (instruções no README).</p>
+      </form>
+      <div id="rsvpSuccess" class="success" hidden>Obrigado! Sua confirmação foi registrada.</div>
+    </section>
+
+    <footer class="footer">
+      <p>Feito com ❤️ — Átallo &amp; Nicole</p>
+    </footer>
+  </main>
+
+  <!-- Modal for Pix -->
+  <div id="pixModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="closeModal">&times;</button>
+      <h3>Pagar com Pix</h3>
+      <p>Chave Pix: <strong id="pixKey">nicolesuzane2308@gnail.com</strong></p>
+      <p>Valor selecionado: <strong id="pixAmount">R$ 0,00</strong></p>
+      <div class="modal-actions">
+        <button id="copyPix">Copiar chave</button>
+        <a id="openInApp" href="#" target="_blank" rel="noopener">Abrir no app de pagamento (gera link)</a>
+      </div>
+      <p class="hint">Se quiser um QR code dinâmico para pagamento, recomendo usar um serviço como Gerencianet, Mercado Pago ou PagSeguro — instruções no README.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
